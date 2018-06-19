@@ -29,7 +29,8 @@ namespace WindowsFormsApp1
             BOT2.Reset();
             deal.Init(deck);
             deck.Shuffle();
-
+            HitMeButton.Visible = true;
+            RaiseButton1.Visible = true;
         }
 
         /// <summary>
@@ -75,41 +76,57 @@ namespace WindowsFormsApp1
         Hand WinDecider(Hand hand1, Hand hand2)
         {
             //conditions to win
-            if (((hand2.Score() > hand1.Score() && hand2.Score() <= 21) && (hand2.fold == false && hand1.fold == false)) || (hand2.fold == false || hand1.fold == true))
+            if (hand2.fold == false && hand1.fold == false) //if both hands haven't folded
+            {
+                if (hand2.Score() > hand1.Score()) //hand 2 wins
+                {
+                    hand1.winner = false;
+                    hand2.winner = true;
+                    return hand2;
+                }
+                else if (hand1.Score() > hand2.Score()) //hand 1 wins
+                //(if both hands haven't folded) Hand1 must be higher than hand2, not have folded or be higher than 21 || hand2 has folded but hand1 hasn't
+                {
+                    hand1.winner = true;
+                    hand2.winner = false;
+                    return hand1;
+                }
+                else //if theres a tie and both players haven't folded
+                {
+
+                    Random rnd = new Random();
+                    int coin = rnd.Next(0, 2);
+                    if (coin == 1) //flip of a coin decides winner (Heads)
+                    {
+                        hand1.winner = true;
+                        hand2.winner = false;
+                        return hand1; //hand1 wins
+                    }
+                    else //Tails
+                    {
+                        hand1.winner = false;
+                        hand2.winner = true;
+                        return hand2; //hand2 wins
+                    }
+                }
+            }
+            else if (hand2.fold == false || hand1.fold == true) //hand 2 fold, hand 1 hasn't
             {
                 hand1.winner = false;
                 hand2.winner = true;
                 return hand2;
             }
-            else if (((hand1.Score() > hand2.Score() && hand1.Score() <= 21) && (hand1.fold == false && hand2.fold == false)) || (hand1.fold == false || hand2.fold == true))
-            //(if both hands haven't folded) Hand1 must be higher than hand2, not have folded or be higher than 21 || hand2 has folded but hand1 hasn't
+            else if (hand1.fold == false || hand2.fold == true) //hand 2 folded, but hand 1 hasn't
             {
+
                 hand1.winner = true;
                 hand2.winner = false;
                 return hand1;
             }
-
-            else if (hand1.Score() == hand2.Score()) //if theres a tie and both players haven't folded
-            {
-
-                Random rnd = new Random();
-                int coin = rnd.Next(0, 2);
-                if (coin == 0) //flip of a coin decides winner (Heads)
-                {
-                    hand1.winner = true;
-                    hand2.winner = false;
-                    return hand1; //hand1 wins
-                }
-                else //Tails
-                {
-                    hand1.winner = false;
-                    hand2.winner = true;
-                    return hand2; //hand2 wins
-                }               
-            }
             else //if no player is qualified to win
             {
-                return null;
+                MessageBox.Show("both failed");
+                return hand1;
             }
         }
 
@@ -541,7 +558,7 @@ namespace WindowsFormsApp1
             player.stand = true;
         }
 
-        private void FoldButton_Click(object sender, EventArgs e) //fold
+        private void FoldButton_Click(object sender, EventArgs e) //fold button
         {
             player.fold = true; //player is registered as folded
             StandButton.Visible = true;

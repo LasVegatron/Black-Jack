@@ -18,3 +18,13 @@ C:\Users\Ruben JL\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Windo
 C:\Users\Ruben JL\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
 C:\Users\Ruben JL\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
 C:\Users\Ruben JL\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MainWindow.resources
+C:\Users\Thomas\Documents\GitHub\Black-Jack\BlackJackClient\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\Thomas\Documents\GitHub\Black-Jack\BlackJackClient\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\Thomas\Documents\GitHub\Black-Jack\BlackJackClient\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\Thomas\Documents\GitHub\Black-Jack\BlackJackClient\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojResolveAssemblyReference.cache
+C:\Users\Thomas\Documents\GitHub\Black-Jack\BlackJackClient\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MainWindow.resources
+C:\Users\Thomas\Documents\GitHub\Black-Jack\BlackJackClient\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\Thomas\Documents\GitHub\Black-Jack\BlackJackClient\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.Cache
+C:\Users\Thomas\Documents\GitHub\Black-Jack\BlackJackClient\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\Thomas\Documents\GitHub\Black-Jack\BlackJackClient\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\Thomas\Documents\GitHub\Black-Jack\BlackJackClient\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
