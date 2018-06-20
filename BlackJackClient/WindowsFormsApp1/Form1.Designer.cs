@@ -28,18 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.GamePanel = new System.Windows.Forms.Panel();
             this.BOT2MatchBox = new System.Windows.Forms.TextBox();
             this.BOT2WalletBox = new System.Windows.Forms.TextBox();
             this.BOT2CardBox = new System.Windows.Forms.TextBox();
             this.BOT2HitKey = new System.Windows.Forms.Button();
-            this.DealButton = new System.Windows.Forms.Button();
             this.BOT1MatchBox = new System.Windows.Forms.TextBox();
             this.BOT1WalletBox = new System.Windows.Forms.TextBox();
             this.BOT1CardBox = new System.Windows.Forms.TextBox();
             this.BOT1HitKey = new System.Windows.Forms.Button();
             this.StandButton = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.RoundMatch = new System.Windows.Forms.TextBox();
             this.PotBox = new System.Windows.Forms.TextBox();
             this.DeckCountBox = new System.Windows.Forms.TextBox();
             this.RaiseButton2 = new System.Windows.Forms.Button();
@@ -48,51 +47,59 @@
             this.RaiseInputText = new System.Windows.Forms.TextBox();
             this.PlayerWalletBox = new System.Windows.Forms.TextBox();
             this.PlayerCardBox = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.QuitMainPanel = new System.Windows.Forms.Button();
             this.FoldButton = new System.Windows.Forms.Button();
             this.HitMeButton = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.MainPanel = new System.Windows.Forms.Panel();
+            this.CloseColors = new System.Windows.Forms.Button();
+            this.OrangePreset = new System.Windows.Forms.Button();
+            this.WhitePreset = new System.Windows.Forms.Button();
+            this.GreenPreset = new System.Windows.Forms.Button();
+            this.RedPreset = new System.Windows.Forms.Button();
+            this.QuitProgram = new System.Windows.Forms.Button();
             this.PlayGam = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.DepositToServer = new System.Windows.Forms.Button();
+            this.Colorscheme = new System.Windows.Forms.Button();
+            this.ServerPanel = new System.Windows.Forms.Panel();
+            this.QuitServerPanel = new System.Windows.Forms.Button();
+            this.ErrorBox = new System.Windows.Forms.TextBox();
+            this.Receive = new System.Windows.Forms.TextBox();
+            this.SendWins = new System.Windows.Forms.Button();
+            this.Send = new System.Windows.Forms.TextBox();
+            this.GamePanel.SuspendLayout();
+            this.MainPanel.SuspendLayout();
+            this.ServerPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // GamePanel
             // 
-            this.panel1.Controls.Add(this.BOT2MatchBox);
-            this.panel1.Controls.Add(this.BOT2WalletBox);
-            this.panel1.Controls.Add(this.BOT2CardBox);
-            this.panel1.Controls.Add(this.BOT2HitKey);
-            this.panel1.Controls.Add(this.DealButton);
-            this.panel1.Controls.Add(this.BOT1MatchBox);
-            this.panel1.Controls.Add(this.BOT1WalletBox);
-            this.panel1.Controls.Add(this.BOT1CardBox);
-            this.panel1.Controls.Add(this.BOT1HitKey);
-            this.panel1.Controls.Add(this.StandButton);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.PotBox);
-            this.panel1.Controls.Add(this.DeckCountBox);
-            this.panel1.Controls.Add(this.RaiseButton2);
-            this.panel1.Controls.Add(this.RaiseButton1);
-            this.panel1.Controls.Add(this.CancelRaise);
-            this.panel1.Controls.Add(this.RaiseInputText);
-            this.panel1.Controls.Add(this.PlayerWalletBox);
-            this.panel1.Controls.Add(this.PlayerCardBox);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.FoldButton);
-            this.panel1.Controls.Add(this.HitMeButton);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(845, 351);
-            this.panel1.TabIndex = 5;
-            this.panel1.Visible = false;
+            this.GamePanel.BackColor = System.Drawing.Color.Gainsboro;
+            this.GamePanel.Controls.Add(this.BOT2MatchBox);
+            this.GamePanel.Controls.Add(this.BOT2WalletBox);
+            this.GamePanel.Controls.Add(this.BOT2CardBox);
+            this.GamePanel.Controls.Add(this.BOT2HitKey);
+            this.GamePanel.Controls.Add(this.BOT1MatchBox);
+            this.GamePanel.Controls.Add(this.BOT1WalletBox);
+            this.GamePanel.Controls.Add(this.BOT1CardBox);
+            this.GamePanel.Controls.Add(this.BOT1HitKey);
+            this.GamePanel.Controls.Add(this.StandButton);
+            this.GamePanel.Controls.Add(this.RoundMatch);
+            this.GamePanel.Controls.Add(this.PotBox);
+            this.GamePanel.Controls.Add(this.DeckCountBox);
+            this.GamePanel.Controls.Add(this.RaiseButton2);
+            this.GamePanel.Controls.Add(this.RaiseButton1);
+            this.GamePanel.Controls.Add(this.CancelRaise);
+            this.GamePanel.Controls.Add(this.RaiseInputText);
+            this.GamePanel.Controls.Add(this.PlayerWalletBox);
+            this.GamePanel.Controls.Add(this.PlayerCardBox);
+            this.GamePanel.Controls.Add(this.QuitMainPanel);
+            this.GamePanel.Controls.Add(this.FoldButton);
+            this.GamePanel.Controls.Add(this.HitMeButton);
+            this.GamePanel.Location = new System.Drawing.Point(12, 12);
+            this.GamePanel.Name = "GamePanel";
+            this.GamePanel.Size = new System.Drawing.Size(843, 352);
+            this.GamePanel.TabIndex = 5;
+            this.GamePanel.Visible = false;
             // 
             // BOT2MatchBox
             // 
@@ -120,22 +127,14 @@
             // 
             // BOT2HitKey
             // 
+            this.BOT2HitKey.FlatAppearance.BorderSize = 0;
+            this.BOT2HitKey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BOT2HitKey.Location = new System.Drawing.Point(404, 267);
             this.BOT2HitKey.Name = "BOT2HitKey";
             this.BOT2HitKey.Size = new System.Drawing.Size(114, 21);
             this.BOT2HitKey.TabIndex = 27;
             this.BOT2HitKey.Text = "Hit Me";
             this.BOT2HitKey.UseVisualStyleBackColor = true;
-            // 
-            // DealButton
-            // 
-            this.DealButton.Location = new System.Drawing.Point(197, 65);
-            this.DealButton.Name = "DealButton";
-            this.DealButton.Size = new System.Drawing.Size(114, 21);
-            this.DealButton.TabIndex = 25;
-            this.DealButton.Text = "Dealer";
-            this.DealButton.UseVisualStyleBackColor = true;
-            this.DealButton.Click += new System.EventHandler(this.button11_Click);
             // 
             // BOT1MatchBox
             // 
@@ -163,6 +162,8 @@
             // 
             // BOT1HitKey
             // 
+            this.BOT1HitKey.FlatAppearance.BorderSize = 0;
+            this.BOT1HitKey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BOT1HitKey.Location = new System.Drawing.Point(477, 131);
             this.BOT1HitKey.Name = "BOT1HitKey";
             this.BOT1HitKey.Size = new System.Drawing.Size(114, 21);
@@ -172,6 +173,8 @@
             // 
             // StandButton
             // 
+            this.StandButton.FlatAppearance.BorderSize = 0;
+            this.StandButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.StandButton.Location = new System.Drawing.Point(255, 291);
             this.StandButton.Name = "StandButton";
             this.StandButton.Size = new System.Drawing.Size(75, 48);
@@ -180,14 +183,14 @@
             this.StandButton.UseVisualStyleBackColor = true;
             this.StandButton.Click += new System.EventHandler(this.StandButton_Click_1);
             // 
-            // textBox4
+            // RoundMatch
             // 
-            this.textBox4.Location = new System.Drawing.Point(21, 76);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(45, 20);
-            this.textBox4.TabIndex = 17;
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.RoundMatch.Location = new System.Drawing.Point(21, 76);
+            this.RoundMatch.Name = "RoundMatch";
+            this.RoundMatch.ReadOnly = true;
+            this.RoundMatch.Size = new System.Drawing.Size(45, 20);
+            this.RoundMatch.TabIndex = 17;
+            this.RoundMatch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // PotBox
             // 
@@ -209,6 +212,8 @@
             // 
             // RaiseButton2
             // 
+            this.RaiseButton2.FlatAppearance.BorderSize = 0;
+            this.RaiseButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RaiseButton2.Location = new System.Drawing.Point(93, 210);
             this.RaiseButton2.Name = "RaiseButton2";
             this.RaiseButton2.Size = new System.Drawing.Size(75, 23);
@@ -221,6 +226,8 @@
             // 
             // RaiseButton1
             // 
+            this.RaiseButton1.FlatAppearance.BorderSize = 0;
+            this.RaiseButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RaiseButton1.Location = new System.Drawing.Point(93, 291);
             this.RaiseButton1.Name = "RaiseButton1";
             this.RaiseButton1.Size = new System.Drawing.Size(75, 48);
@@ -231,6 +238,8 @@
             // 
             // CancelRaise
             // 
+            this.CancelRaise.FlatAppearance.BorderSize = 0;
+            this.CancelRaise.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CancelRaise.Location = new System.Drawing.Point(174, 237);
             this.CancelRaise.Name = "CancelRaise";
             this.CancelRaise.Size = new System.Drawing.Size(75, 23);
@@ -265,18 +274,22 @@
             this.PlayerCardBox.Size = new System.Drawing.Size(318, 20);
             this.PlayerCardBox.TabIndex = 9;
             // 
-            // button4
+            // QuitMainPanel
             // 
-            this.button4.Location = new System.Drawing.Point(748, 27);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(49, 20);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Quit";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.QuitGame);
+            this.QuitMainPanel.FlatAppearance.BorderSize = 0;
+            this.QuitMainPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.QuitMainPanel.Location = new System.Drawing.Point(748, 27);
+            this.QuitMainPanel.Name = "QuitMainPanel";
+            this.QuitMainPanel.Size = new System.Drawing.Size(49, 20);
+            this.QuitMainPanel.TabIndex = 8;
+            this.QuitMainPanel.Text = "Quit";
+            this.QuitMainPanel.UseVisualStyleBackColor = true;
+            this.QuitMainPanel.Click += new System.EventHandler(this.QuitGame);
             // 
             // FoldButton
             // 
+            this.FoldButton.FlatAppearance.BorderSize = 0;
+            this.FoldButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FoldButton.Location = new System.Drawing.Point(174, 291);
             this.FoldButton.Name = "FoldButton";
             this.FoldButton.Size = new System.Drawing.Size(75, 48);
@@ -287,6 +300,8 @@
             // 
             // HitMeButton
             // 
+            this.HitMeButton.FlatAppearance.BorderSize = 0;
+            this.HitMeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.HitMeButton.Location = new System.Drawing.Point(12, 291);
             this.HitMeButton.Name = "HitMeButton";
             this.HitMeButton.Size = new System.Drawing.Size(75, 48);
@@ -295,69 +310,111 @@
             this.HitMeButton.UseVisualStyleBackColor = true;
             this.HitMeButton.Click += new System.EventHandler(this.HitMe);
             // 
-            // panel2
+            // MainPanel
             // 
-            this.panel2.Controls.Add(this.button10);
-            this.panel2.Controls.Add(this.button9);
-            this.panel2.Controls.Add(this.button7);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button8);
-            this.panel2.Controls.Add(this.PlayGam);
-            this.panel2.Controls.Add(this.button6);
-            this.panel2.Controls.Add(this.button5);
-            this.panel2.Location = new System.Drawing.Point(849, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(533, 348);
-            this.panel2.TabIndex = 6;
+            this.MainPanel.BackColor = System.Drawing.Color.Gainsboro;
+            this.MainPanel.Controls.Add(this.CloseColors);
+            this.MainPanel.Controls.Add(this.OrangePreset);
+            this.MainPanel.Controls.Add(this.WhitePreset);
+            this.MainPanel.Controls.Add(this.GreenPreset);
+            this.MainPanel.Controls.Add(this.RedPreset);
+            this.MainPanel.Controls.Add(this.QuitProgram);
+            this.MainPanel.Controls.Add(this.PlayGam);
+            this.MainPanel.Controls.Add(this.DepositToServer);
+            this.MainPanel.Controls.Add(this.Colorscheme);
+            this.MainPanel.Location = new System.Drawing.Point(12, 12);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(843, 352);
+            this.MainPanel.TabIndex = 6;
             // 
-            // button10
+            // CloseColors
             // 
-            this.button10.Location = new System.Drawing.Point(273, 156);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 23);
-            this.button10.TabIndex = 13;
-            this.button10.Text = "Orange";
-            this.button10.UseVisualStyleBackColor = true;
+            this.CloseColors.FlatAppearance.BorderSize = 0;
+            this.CloseColors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseColors.Location = new System.Drawing.Point(489, 179);
+            this.CloseColors.Name = "CloseColors";
+            this.CloseColors.Size = new System.Drawing.Size(156, 21);
+            this.CloseColors.TabIndex = 15;
+            this.CloseColors.Text = "Done";
+            this.CloseColors.UseVisualStyleBackColor = true;
+            this.CloseColors.Visible = false;
+            this.CloseColors.Click += new System.EventHandler(this.CloseColoerMenu_Click);
             // 
-            // button9
+            // OrangePreset
             // 
-            this.button9.Location = new System.Drawing.Point(273, 131);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 12;
-            this.button9.Text = "White";
-            this.button9.UseVisualStyleBackColor = true;
+            this.OrangePreset.FlatAppearance.BorderSize = 0;
+            this.OrangePreset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OrangePreset.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.OrangePreset.Location = new System.Drawing.Point(570, 151);
+            this.OrangePreset.Name = "OrangePreset";
+            this.OrangePreset.Size = new System.Drawing.Size(75, 23);
+            this.OrangePreset.TabIndex = 13;
+            this.OrangePreset.Text = "Orange";
+            this.OrangePreset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.OrangePreset.UseVisualStyleBackColor = true;
+            this.OrangePreset.Visible = false;
+            this.OrangePreset.Click += new System.EventHandler(this.OrangePreset_Click);
             // 
-            // button7
+            // WhitePreset
             // 
-            this.button7.Location = new System.Drawing.Point(192, 156);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 11;
-            this.button7.Text = "Green";
-            this.button7.UseVisualStyleBackColor = true;
+            this.WhitePreset.FlatAppearance.BorderSize = 0;
+            this.WhitePreset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.WhitePreset.Location = new System.Drawing.Point(570, 126);
+            this.WhitePreset.Name = "WhitePreset";
+            this.WhitePreset.Size = new System.Drawing.Size(75, 23);
+            this.WhitePreset.TabIndex = 12;
+            this.WhitePreset.Text = "White";
+            this.WhitePreset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.WhitePreset.UseVisualStyleBackColor = true;
+            this.WhitePreset.Visible = false;
+            this.WhitePreset.Click += new System.EventHandler(this.WhitePreset_Click);
             // 
-            // button2
+            // GreenPreset
             // 
-            this.button2.Location = new System.Drawing.Point(192, 131);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Red";
-            this.button2.UseVisualStyleBackColor = true;
+            this.GreenPreset.FlatAppearance.BorderSize = 0;
+            this.GreenPreset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GreenPreset.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.GreenPreset.Location = new System.Drawing.Point(489, 151);
+            this.GreenPreset.Name = "GreenPreset";
+            this.GreenPreset.Size = new System.Drawing.Size(75, 23);
+            this.GreenPreset.TabIndex = 11;
+            this.GreenPreset.Text = "Green";
+            this.GreenPreset.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.GreenPreset.UseVisualStyleBackColor = true;
+            this.GreenPreset.Visible = false;
+            this.GreenPreset.Click += new System.EventHandler(this.GreenPreset_Click);
             // 
-            // button8
+            // RedPreset
             // 
-            this.button8.Location = new System.Drawing.Point(23, 185);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(163, 48);
-            this.button8.TabIndex = 9;
-            this.button8.Text = "QuitGame";
-            this.button8.UseVisualStyleBackColor = true;
+            this.RedPreset.FlatAppearance.BorderSize = 0;
+            this.RedPreset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RedPreset.Location = new System.Drawing.Point(489, 126);
+            this.RedPreset.Name = "RedPreset";
+            this.RedPreset.Size = new System.Drawing.Size(75, 23);
+            this.RedPreset.TabIndex = 10;
+            this.RedPreset.Text = "Red";
+            this.RedPreset.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.RedPreset.UseVisualStyleBackColor = true;
+            this.RedPreset.Visible = false;
+            this.RedPreset.Click += new System.EventHandler(this.RedPreset_Click);
+            // 
+            // QuitProgram
+            // 
+            this.QuitProgram.FlatAppearance.BorderSize = 0;
+            this.QuitProgram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.QuitProgram.Location = new System.Drawing.Point(648, 180);
+            this.QuitProgram.Name = "QuitProgram";
+            this.QuitProgram.Size = new System.Drawing.Size(163, 48);
+            this.QuitProgram.TabIndex = 9;
+            this.QuitProgram.Text = "QuitGame";
+            this.QuitProgram.UseVisualStyleBackColor = true;
+            this.QuitProgram.Click += new System.EventHandler(this.QuitProgram_Click);
             // 
             // PlayGam
             // 
-            this.PlayGam.Location = new System.Drawing.Point(23, 23);
+            this.PlayGam.FlatAppearance.BorderSize = 0;
+            this.PlayGam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PlayGam.Location = new System.Drawing.Point(648, 18);
             this.PlayGam.Name = "PlayGam";
             this.PlayGam.Size = new System.Drawing.Size(163, 48);
             this.PlayGam.TabIndex = 8;
@@ -365,74 +422,162 @@
             this.PlayGam.UseVisualStyleBackColor = true;
             this.PlayGam.Click += new System.EventHandler(this.PlayGame);
             // 
-            // button6
+            // DepositToServer
             // 
-            this.button6.Location = new System.Drawing.Point(23, 77);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(163, 48);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "Connection";
-            this.button6.UseVisualStyleBackColor = true;
+            this.DepositToServer.FlatAppearance.BorderSize = 0;
+            this.DepositToServer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DepositToServer.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.DepositToServer.Location = new System.Drawing.Point(648, 72);
+            this.DepositToServer.Name = "DepositToServer";
+            this.DepositToServer.Size = new System.Drawing.Size(163, 48);
+            this.DepositToServer.TabIndex = 7;
+            this.DepositToServer.Text = "Connection";
+            this.DepositToServer.UseVisualStyleBackColor = true;
+            this.DepositToServer.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button5
+            // Colorscheme
             // 
-            this.button5.Location = new System.Drawing.Point(23, 131);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(163, 48);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "Color Scheme";
-            this.button5.UseVisualStyleBackColor = true;
+            this.Colorscheme.FlatAppearance.BorderSize = 0;
+            this.Colorscheme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Colorscheme.Location = new System.Drawing.Point(648, 126);
+            this.Colorscheme.Name = "Colorscheme";
+            this.Colorscheme.Size = new System.Drawing.Size(163, 48);
+            this.Colorscheme.TabIndex = 6;
+            this.Colorscheme.Text = "Color Scheme";
+            this.Colorscheme.UseVisualStyleBackColor = true;
+            this.Colorscheme.Click += new System.EventHandler(this.Colorscheme_Click);
+            // 
+            // ServerPanel
+            // 
+            this.ServerPanel.BackColor = System.Drawing.Color.Gainsboro;
+            this.ServerPanel.Controls.Add(this.QuitServerPanel);
+            this.ServerPanel.Controls.Add(this.ErrorBox);
+            this.ServerPanel.Controls.Add(this.Receive);
+            this.ServerPanel.Controls.Add(this.SendWins);
+            this.ServerPanel.Controls.Add(this.Send);
+            this.ServerPanel.Location = new System.Drawing.Point(12, 12);
+            this.ServerPanel.Name = "ServerPanel";
+            this.ServerPanel.Size = new System.Drawing.Size(846, 356);
+            this.ServerPanel.TabIndex = 7;
+            this.ServerPanel.Visible = false;
+            // 
+            // QuitServerPanel
+            // 
+            this.QuitServerPanel.FlatAppearance.BorderSize = 0;
+            this.QuitServerPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.QuitServerPanel.Location = new System.Drawing.Point(25, 313);
+            this.QuitServerPanel.Name = "QuitServerPanel";
+            this.QuitServerPanel.Size = new System.Drawing.Size(43, 23);
+            this.QuitServerPanel.TabIndex = 4;
+            this.QuitServerPanel.Text = "Quit";
+            this.QuitServerPanel.UseVisualStyleBackColor = true;
+            this.QuitServerPanel.Click += new System.EventHandler(this.QuitSend_Click);
+            // 
+            // ErrorBox
+            // 
+            this.ErrorBox.Location = new System.Drawing.Point(192, 68);
+            this.ErrorBox.Name = "ErrorBox";
+            this.ErrorBox.Size = new System.Drawing.Size(360, 20);
+            this.ErrorBox.TabIndex = 3;
+            // 
+            // Receive
+            // 
+            this.Receive.Location = new System.Drawing.Point(192, 42);
+            this.Receive.Name = "Receive";
+            this.Receive.Size = new System.Drawing.Size(360, 20);
+            this.Receive.TabIndex = 2;
+            // 
+            // SendWins
+            // 
+            this.SendWins.FlatAppearance.BorderSize = 0;
+            this.SendWins.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SendWins.Location = new System.Drawing.Point(25, 16);
+            this.SendWins.Name = "SendWins";
+            this.SendWins.Size = new System.Drawing.Size(135, 72);
+            this.SendWins.TabIndex = 1;
+            this.SendWins.Text = "Send Wins";
+            this.SendWins.UseVisualStyleBackColor = true;
+            this.SendWins.Click += new System.EventHandler(this.SendWins_Click);
+            // 
+            // Send
+            // 
+            this.Send.Location = new System.Drawing.Point(192, 16);
+            this.Send.Name = "Send";
+            this.Send.Size = new System.Drawing.Size(360, 20);
+            this.Send.TabIndex = 0;
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1403, 613);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(876, 387);
+            this.Controls.Add(this.ServerPanel);
+            this.Controls.Add(this.MainPanel);
+            this.Controls.Add(this.GamePanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MainWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
+            this.GamePanel.ResumeLayout(false);
+            this.GamePanel.PerformLayout();
+            this.MainPanel.ResumeLayout(false);
+            this.ServerPanel.ResumeLayout(false);
+            this.ServerPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox PlayerCardBox;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button FoldButton;
-        private System.Windows.Forms.Button HitMeButton;
-        private System.Windows.Forms.Panel panel2;
+        //main page related
+        private System.Windows.Forms.Panel MainPanel;
+        private System.Windows.Forms.Button QuitMainPanel;
         private System.Windows.Forms.Button PlayGam;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button DepositToServer;
+        private System.Windows.Forms.Button QuitProgram;
+        //Colour presets
+        private System.Windows.Forms.Button Colorscheme;
+        private System.Windows.Forms.Button OrangePreset;
+        private System.Windows.Forms.Button WhitePreset;
+        private System.Windows.Forms.Button GreenPreset;
+        private System.Windows.Forms.Button RedPreset;
+
+        //in-game related
+        private System.Windows.Forms.Panel GamePanel;
+        private System.Windows.Forms.TextBox DeckCountBox;
+        private System.Windows.Forms.TextBox PotBox;
+        private System.Windows.Forms.TextBox RoundMatch;
+        //Player related
+        private System.Windows.Forms.TextBox PlayerCardBox;
         private System.Windows.Forms.TextBox PlayerWalletBox;
         private System.Windows.Forms.TextBox RaiseInputText;
+        private System.Windows.Forms.Button FoldButton;
+        private System.Windows.Forms.Button HitMeButton;
         private System.Windows.Forms.Button CancelRaise;
         private System.Windows.Forms.Button RaiseButton1;
         private System.Windows.Forms.Button RaiseButton2;
-        private System.Windows.Forms.TextBox DeckCountBox;
-        private System.Windows.Forms.TextBox PotBox;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button StandButton;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button DealButton;
+        //BOT related
+        //BOT1
         private System.Windows.Forms.TextBox BOT1MatchBox;
         private System.Windows.Forms.TextBox BOT1WalletBox;
         private System.Windows.Forms.TextBox BOT1CardBox;
         private System.Windows.Forms.Button BOT1HitKey;
+        //BOT2
         private System.Windows.Forms.TextBox BOT2MatchBox;
         private System.Windows.Forms.TextBox BOT2WalletBox;
         private System.Windows.Forms.TextBox BOT2CardBox;
         private System.Windows.Forms.Button BOT2HitKey;
+
+        //Server related
+        private System.Windows.Forms.Panel ServerPanel;
+        private System.Windows.Forms.TextBox Send;
+        private System.Windows.Forms.TextBox Receive;
+        private System.Windows.Forms.TextBox ErrorBox;
+        private System.Windows.Forms.Button SendWins;
+        private System.Windows.Forms.Button QuitServerPanel;
+        private System.Windows.Forms.Button CloseColors;
     }
 }
 

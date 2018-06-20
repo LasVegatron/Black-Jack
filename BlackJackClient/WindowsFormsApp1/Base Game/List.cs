@@ -111,7 +111,7 @@ namespace WindowsFormsApp1
         public int handLimit = 5; //number of cards maximum per player (not editable)
         public int handCount = 5; //number of card spaces left
 
-        public void Reset()
+        public new void Reset()
         {
             // resets
             match = 0; //money player has bet in the current round
@@ -147,8 +147,9 @@ namespace WindowsFormsApp1
         public int inRound; //determines how many times a turn has been had by a BOT per round
         public string winMessage = " 'ha suck suck m80'";
         public string lossMessage = " 'dang nabbot damnit dabbot davit'";
+        public bool hidden = true; //determines whether or not the player can see opponents hand
 
-        public void Reset()
+        public new void Reset()
         {
             //resets
             match = 0; //money player has bet in the current round
@@ -156,6 +157,7 @@ namespace WindowsFormsApp1
             fold = false; //whether player has folded this round
             winner = false; //active if player is the winner of this round
             nonStand = false; //records if player has made an action before ending their turn;
+            hidden = true; //determines whether or not the player can see opponents hand
             handCount = 5;
             inRound = 0;
 

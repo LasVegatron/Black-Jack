@@ -18,9 +18,9 @@ namespace WindowsFormsApp1
         }
 
         //init deck
-        public void Init(Deck a)
+        public void Init(Deck deck)
         {
-            a.Reset();
+            deck.Reset();
             string face; //the card's face (user use)
             int num = 0; //cards value (determine score)
             for (int i = 0; i < 4; i++)
@@ -72,7 +72,7 @@ namespace WindowsFormsApp1
                         face += "of Diamonds";
                     }
 
-                    a.AddStart(face, num);
+                    deck.AddStart(face, num);
                 }
             }
         }
