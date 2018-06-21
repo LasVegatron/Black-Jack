@@ -108,17 +108,16 @@ namespace WindowsFormsApp1
         public bool fold = false; //whether player has folded this round
         public bool winner = false; //active if player is the winner of this round
         public bool nonStand = false; //records if player has made an action before ending their turn;
-        public int handLimit = 5; //number of cards maximum per player (not editable)
         public int handCount = 5; //number of card spaces left
 
         public new void Reset()
         {
             // resets
-            match = 0; //money player has bet in the current round
-            stand = false; //determines whether or not player is ready to end the round
-            fold = false; //whether player has folded this round
-            winner = false; //active if player is the winner of this round
-            nonStand = false; //records if player has made an action before ending their turn;
+            match = 0; 
+            stand = false;
+            fold = false; 
+            winner = false; 
+            nonStand = false; 
             handCount = 5;
 
             while (count > 0)
@@ -145,19 +144,18 @@ namespace WindowsFormsApp1
     public class Bot : Hand
     {
         public int inRound; //determines how many times a turn has been had by a BOT per round
-        public string winMessage = " 'ha suck suck m80'";
         public string lossMessage = " 'dang nabbot damnit dabbot davit'";
         public bool hidden = true; //determines whether or not the player can see opponents hand
 
         public new void Reset()
         {
             //resets
-            match = 0; //money player has bet in the current round
-            stand = false; //determines whether or not player is ready to end the round
-            fold = false; //whether player has folded this round
-            winner = false; //active if player is the winner of this round
-            nonStand = false; //records if player has made an action before ending their turn;
-            hidden = true; //determines whether or not the player can see opponents hand
+            match = 0; 
+            stand = false; 
+            fold = false; 
+            winner = false; 
+            nonStand = false;
+            hidden = true;
             handCount = 5;
             inRound = 0;
 

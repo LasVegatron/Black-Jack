@@ -12,12 +12,14 @@ namespace WindowsFormsApp1
 {
     public partial class MainWindow : Form
     {
-        SocketClient client = new SocketClient();
-        private Hand player = new Hand();
+        SocketClient client = new SocketClient(); //client socket
+        private Hand player = new Hand(); //player
+        //bots
         private Bot BOT1 = new Bot();
         private Bot BOT2 = new Bot();
-        private Deck deck = new Deck();
-        private Dealer deal = new Dealer();
+        //game functions
+        private Deck deck = new Deck(); //the deck. holds all cards at start of round
+        private Dealer deal = new Dealer(); //dealer.handles majority of money transactions
         int rounds = 0;
         int winnings = 0;
         bool hit = false;
@@ -92,6 +94,7 @@ namespace WindowsFormsApp1
         Hand WinDecider(Hand hand1, Hand hand2)
         {
             //conditions to win
+            //only decides on who wins, doesn't transfer the money
             if (hand2.fold == false && hand1.fold == false) //if both hands haven't folded
             {
                 if (hand2.Score() > hand1.Score()) //hand 2 wins
@@ -109,9 +112,8 @@ namespace WindowsFormsApp1
                 }
                 else //if theres a tie and both players haven't folded
                 {
-
-                    Random rnd = new Random();
-                    int coin = rnd.Next(0, 2);
+                    Random rnd = new Random(); //new randomizer
+                    int coin = rnd.Next(0, 2); 
                     if (coin == 1) //flip of a coin decides winner (Heads)
                     {
                         hand1.winner = true;
@@ -142,7 +144,7 @@ namespace WindowsFormsApp1
             else //if no player is qualified to win
             {
                 MessageBox.Show("both failed");
-                return hand1;
+                return hand1; //either hand can be played. both have lost
             }
         }
 
@@ -164,8 +166,6 @@ namespace WindowsFormsApp1
 
             SearchWinner(hand1, hand2, hand3); //searches for who the decided winner is
         }
-
-
         
         /// <summary>
         /// searches for winner and decides who wins the prize
@@ -175,6 +175,7 @@ namespace WindowsFormsApp1
         /// <param name="BOT2"></param>
         void SearchWinner(Hand player, Hand BOT1, Hand BOT2)
         {
+            //search is conducted through 'win' boolean.
             if (player.winner == true)
             {
                 PrizeWin(player);
@@ -195,10 +196,10 @@ namespace WindowsFormsApp1
         /// <param name="winner"></param>
         void PrizeWin(Hand winner)
         {
-            MessageBox.Show(winner.name + " Wins $" + Convert.ToString(deal.pot));
-            winner.wallet += deal.pot;
-            deal.match = 0;
-            deal.pot = 0;
+            MessageBox.Show(winner.name + " Wins $" + Convert.ToString(deal.pot)); //displays who won and how much money received
+            winner.wallet += deal.pot; //money from pot to winner wallet
+            deal.match = 0; //match ammount reset
+            deal.pot = 0; //pot reet
         }
 
         /// <summary>
@@ -243,7 +244,7 @@ namespace WindowsFormsApp1
         /// </summary>     
         void HitMe(Hand hand, Button hitKey) //(player asking for card, button belonging to player
         {
-            if (hand.handCount > 1 && hand.handCount <= hand.handLimit) //if the card limit hasn't been reached
+            if (hand.handCount > 1 && hand.handCount <= 5) //if the card limit hasn't been reached
             {
                 deal.PickUp(deck, hand); //card dealt from deck
                 hand.handCount--; //player recieving the card has one less card they are able to pick up
@@ -252,9 +253,14 @@ namespace WindowsFormsApp1
             DisplayStat();
         }
 
+        /// <summary>
+        /// hitme function
+        /// </summary>
+        /// <param name="hand"></param>
+        /// <param name="hitKey"></param>
         void HitMe(Bot hand, Button hitKey) //(player asking for card, button belonging to player
         {
-            if (hand.handCount > 1 && hand.handCount <= hand.handLimit) //if the card limit hasn't been reached
+            if (hand.handCount > 1 && hand.handCount <= 5) //if the card limit hasn't been reached
             {
                 deal.PickUp(deck, hand); //card dealt from deck
                 hand.handCount--; //player recieving the card has one less card they are able to pick up
@@ -268,7 +274,7 @@ namespace WindowsFormsApp1
         /// </summary>
         void DisplayStat() //displays stats of game data and players
         {
-            //Player stats
+            //player stats
             DisplayPlayerStats(player, PlayerCardBox, PlayerWalletBox); //player 1
             DisplayPlayerStats(BOT1, BOT1CardBox, BOT1WalletBox); //BOT 1
             DisplayPlayerStats(BOT2, BOT2CardBox, BOT2WalletBox); //BOT 2
@@ -391,7 +397,7 @@ namespace WindowsFormsApp1
         }
 
         /// <summary>
-        /// Determines likelyhood of bot making a decision. (Chooses a strategy)
+        /// determines likelyhood of bot making a decision. (Chooses a strategy)
         /// </summary>
         /// <param name="fChance"></param>
         /// <param name="rChance"></param>
@@ -431,7 +437,7 @@ namespace WindowsFormsApp1
         }
 
         /// <summary>
-        /// Repaints buttons
+        /// repaints buttons
         /// </summary>
         /// <param name="Painted"></param>
         void ColourButtons(Color Painted)
@@ -481,6 +487,17 @@ namespace WindowsFormsApp1
             Send.BackColor = Painted;
             Receive.BackColor = Painted;
             ErrorBox.BackColor = Painted;
+        }
+
+        /// <summary>
+        /// recolours panels
+        /// </summary>
+        /// <param name="Painted"></param>
+        void ColourPanel(Color Painted)
+        {
+            MainPanel.BackColor = Painted;
+            GamePanel.BackColor = Painted;
+            ServerPanel.BackColor = Painted;
         }
 
         /// <summary>
@@ -570,7 +587,11 @@ namespace WindowsFormsApp1
             StandButton.Visible = true;
         }
 
-        // Raise/Match Button
+        /// <summary>
+        /// Raise/Match Button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Raise_Click(object sender, EventArgs e)
         {
             if (player.fold == false)
@@ -600,7 +621,11 @@ namespace WindowsFormsApp1
             }
         }
 
-        //button used to verify and add user money
+        /// <summary>
+        /// button used to verify and add user money
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RaiseIt_Click(object sender, EventArgs e)
         {
             try
@@ -646,10 +671,14 @@ namespace WindowsFormsApp1
             }
         }
 
-        //Stand decision button
-        private void StandButton_Click_1(object sender, EventArgs e) //all actions being played out for the rest of the game are stored here
+        /// <summary>
+        /// Stand decision button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void StandButton_Click(object sender, EventArgs e) //all actions being played out for the rest of the game are stored here
         {
-
+            //butt
             StandButton.Text = "Stand";
             //BOTs take their turns
             BOTDecision(BOT1, BOT1HitKey, BOT1MatchBox); //BOT1's turn
@@ -709,7 +738,12 @@ namespace WindowsFormsApp1
             client.StartClient(Send, Receive, ErrorBox, winnings);
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        /// <summary>
+        /// sends user from 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ShowServer_Click(object sender, EventArgs e)
         {
             //hide colour menu
             HideColour();
@@ -719,13 +753,23 @@ namespace WindowsFormsApp1
             MainPanel.Visible = false;
         }
 
+        /// <summary>
+        /// sends user from server menu to main menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void QuitSend_Click(object sender, EventArgs e)
         {
             ServerPanel.Visible = false;
             MainPanel.Visible = true;
         }
 
-        private void Colorscheme_Click(object sender, EventArgs e)
+        /// <summary>
+        /// opens color scheme menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Colourscheme_Click(object sender, EventArgs e)
         {
             RedPreset.Visible = true;
             GreenPreset.Visible = true;
@@ -734,13 +778,11 @@ namespace WindowsFormsApp1
             CloseColors.Visible = true;
         }
 
-        void ColourPanel(Color Painted)
-        {
-            MainPanel.BackColor = Painted;
-            GamePanel.BackColor = Painted;
-            ServerPanel.BackColor = Painted;
-        }
-
+        /// <summary>
+        /// red theme button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RedPreset_Click(object sender, EventArgs e)
         {
             ColourButtons(Color.DarkRed);
@@ -748,6 +790,11 @@ namespace WindowsFormsApp1
             ColourPanel(Color.LightCoral);
         }
 
+        /// <summary>
+        /// white theme button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void WhitePreset_Click(object sender, EventArgs e)
         {
             ColourButtons(Color.MistyRose);
@@ -755,6 +802,11 @@ namespace WindowsFormsApp1
             ColourPanel(Color.Gainsboro);
         }
 
+        /// <summary>
+        /// green theme click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GreenPreset_Click(object sender, EventArgs e)
         {
             ColourButtons(Color.DarkOliveGreen);
@@ -762,6 +814,11 @@ namespace WindowsFormsApp1
             ColourPanel(Color.DarkSeaGreen);
         }
 
+        /// <summary>
+        /// orange them click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OrangePreset_Click(object sender, EventArgs e)
         {
             ColourButtons(Color.SandyBrown);
@@ -769,11 +826,21 @@ namespace WindowsFormsApp1
             ColourPanel(Color.PeachPuff);
         }
 
+        /// <summary>
+        /// close colour menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CloseColoerMenu_Click(object sender, EventArgs e)
         {
             HideColour();
         }
 
+        /// <summary>
+        /// exits application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void QuitProgram_Click(object sender, EventArgs e)
         {
             Application.Exit();

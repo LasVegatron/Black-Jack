@@ -181,7 +181,7 @@
             this.StandButton.TabIndex = 18;
             this.StandButton.Text = "Stand";
             this.StandButton.UseVisualStyleBackColor = true;
-            this.StandButton.Click += new System.EventHandler(this.StandButton_Click_1);
+            this.StandButton.Click += new System.EventHandler(this.StandButton_Click);
             // 
             // RoundMatch
             // 
@@ -433,7 +433,7 @@
             this.DepositToServer.TabIndex = 7;
             this.DepositToServer.Text = "Connection";
             this.DepositToServer.UseVisualStyleBackColor = true;
-            this.DepositToServer.Click += new System.EventHandler(this.button6_Click);
+            this.DepositToServer.Click += new System.EventHandler(this.ShowServer_Click);
             // 
             // Colorscheme
             // 
@@ -445,7 +445,7 @@
             this.Colorscheme.TabIndex = 6;
             this.Colorscheme.Text = "Color Scheme";
             this.Colorscheme.UseVisualStyleBackColor = true;
-            this.Colorscheme.Click += new System.EventHandler(this.Colorscheme_Click);
+            this.Colorscheme.Click += new System.EventHandler(this.Colourscheme_Click);
             // 
             // ServerPanel
             // 
