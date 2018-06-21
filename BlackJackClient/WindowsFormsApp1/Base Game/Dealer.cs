@@ -6,7 +6,13 @@ namespace WindowsFormsApp1
     {
         public int pot = 0;
         public int match = 0;
-        public int maxScore = 21;
+        private int maxScore = 21;
+
+        public int Max()
+        {
+            return maxScore;
+        }
+
         //switch cards
         //giver, rciever
         public void PickUp(List giver, List reciever)

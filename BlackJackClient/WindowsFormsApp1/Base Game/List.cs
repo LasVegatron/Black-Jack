@@ -144,7 +144,7 @@ namespace WindowsFormsApp1
     public class Bot : Hand
     {
         public int inRound; //determines how many times a turn has been had by a BOT per round
-        public string lossMessage = " 'dang nabbot damnit dabbot davit'";
+        public string lossMessage = " 'dang nabbot damnit dabbot davit'"; //displayed when a bot loses not by choice
         public bool hidden = true; //determines whether or not the player can see opponents hand
 
         public new void Reset()
@@ -169,7 +169,7 @@ namespace WindowsFormsApp1
     public class Deck : List //contains methods only the deck would need to use
     {
         //switch values. x = 1st value y = second
-        public void SwitchV(int x, int y)
+        private void SwitchV(int x, int y)
         {
             Card a = head; //fake head 1
             Card b = head; //fake head 2

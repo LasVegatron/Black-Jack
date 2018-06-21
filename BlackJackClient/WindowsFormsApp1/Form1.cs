@@ -20,15 +20,15 @@ namespace WindowsFormsApp1
         //game functions
         private Deck deck = new Deck(); //the deck. holds all cards at start of round
         private Dealer deal = new Dealer(); //dealer.handles majority of money transactions
-        int rounds = 0;
-        int winnings = 0;
-        bool hit = false;
-        bool match = false; //determines if player has bet the same amount
+        private int rounds = 0;
+        private int winnings = 0;
+        private bool hit = false;
+        private bool match = false; //determines if player has bet the same amount
 
         /// <summary>
         /// start of new round
         /// </summary>
-        void StartRound()
+        private void StartRound()
         {
             rounds++; //counts how many rounds have been played
             player.Reset();
@@ -91,7 +91,7 @@ namespace WindowsFormsApp1
         /// </summary>
         /// <param name="hand"></param>
         /// <param name="hand"></param>
-        Hand WinDecider(Hand hand1, Hand hand2)
+        private Hand WinDecider(Hand hand1, Hand hand2)
         {
             //conditions to win
             //only decides on who wins, doesn't transfer the money
@@ -154,7 +154,7 @@ namespace WindowsFormsApp1
         /// <param name="hand1"></param>
         /// <param name="hand2"></param>
         /// <param name="hand3"></param>
-        void WinDecider(Hand hand1, Hand hand2, Hand hand3)
+        private void WinDecider(Hand hand1, Hand hand2, Hand hand3)
         {
             MessageBox.Show(hand1.name + "vs" + hand2.name);
             Hand tempWinner = WinDecider(hand1, hand2); //first 2 hands compared. best contender chosen
@@ -166,14 +166,14 @@ namespace WindowsFormsApp1
 
             SearchWinner(hand1, hand2, hand3); //searches for who the decided winner is
         }
-        
+
         /// <summary>
         /// searches for winner and decides who wins the prize
         /// </summary>
         /// <param name="player"></param>
         /// <param name="BOT1"></param>
         /// <param name="BOT2"></param>
-        void SearchWinner(Hand player, Hand BOT1, Hand BOT2)
+        private void SearchWinner(Hand player, Hand BOT1, Hand BOT2)
         {
             //search is conducted through 'win' boolean.
             if (player.winner == true)
@@ -194,7 +194,7 @@ namespace WindowsFormsApp1
         /// presents winner with the pot
         /// </summary>
         /// <param name="winner"></param>
-        void PrizeWin(Hand winner)
+        private void PrizeWin(Hand winner)
         {
             MessageBox.Show(winner.name + " Wins $" + Convert.ToString(deal.pot)); //displays who won and how much money received
             winner.wallet += deal.pot; //money from pot to winner wallet
@@ -207,7 +207,7 @@ namespace WindowsFormsApp1
         /// </summary>
         /// <param name="hand"></param>
         /// <param name="match"></param>
-        void RaiseFunc(Hand hand, int match) //raise function
+        private void RaiseFunc(Hand hand, int match) //raise function
         {            
             hand.wallet -= match;
             hand.match += match;
@@ -221,7 +221,7 @@ namespace WindowsFormsApp1
         /// Selected player mathches 
         /// </summary>
         /// <param name="hand"></param>
-        void MatchFunc(Hand hand) //Match function
+        private void MatchFunc(Hand hand) //Match function
         {
             if (deal.match > hand.wallet) //if the ammount needed to bet is higher than the wallet
             {
@@ -242,7 +242,7 @@ namespace WindowsFormsApp1
         /// <summary>
         /// Selected player is given a new card from the deck
         /// </summary>     
-        void HitMe(Hand hand, Button hitKey) //(player asking for card, button belonging to player
+        private void HitMe(Hand hand, Button hitKey) //(player asking for card, button belonging to player
         {
             if (hand.handCount > 1 && hand.handCount <= 5) //if the card limit hasn't been reached
             {
@@ -258,7 +258,7 @@ namespace WindowsFormsApp1
         /// </summary>
         /// <param name="hand"></param>
         /// <param name="hitKey"></param>
-        void HitMe(Bot hand, Button hitKey) //(player asking for card, button belonging to player
+        private void HitMe(Bot hand, Button hitKey) //(player asking for card, button belonging to player
         {
             if (hand.handCount > 1 && hand.handCount <= 5) //if the card limit hasn't been reached
             {
@@ -272,7 +272,7 @@ namespace WindowsFormsApp1
         /// <summary>
         /// Prints all stats
         /// </summary>
-        void DisplayStat() //displays stats of game data and players
+        private void DisplayStat() //displays stats of game data and players
         {
             //player stats
             DisplayPlayerStats(player, PlayerCardBox, PlayerWalletBox); //player 1
@@ -291,7 +291,7 @@ namespace WindowsFormsApp1
         /// <param name="BOT"></param>
         /// <param name="BOTCardBox"></param>
         /// <param name="BOTWalletBox"></param>
-        void DisplayPlayerStats(Bot BOT, TextBox Hand, TextBox Wallet)
+        private void DisplayPlayerStats(Bot BOT, TextBox Hand, TextBox Wallet)
         {
             if (BOT.hidden == true)
             {
@@ -315,12 +315,12 @@ namespace WindowsFormsApp1
         /// <param name="player"></param>
         /// <param name="Hand"></param>
         /// <param name="Wallet"></param>
-        void DisplayPlayerStats(Hand player, TextBox Hand, TextBox Wallet) //(player with stats being displayed, their cards, their wallet)
+        private void DisplayPlayerStats(Hand player, TextBox Hand, TextBox Wallet) //(player with stats being displayed, their cards, their wallet)
         {
             Hand.Text = player.Print(); //display player hand
             Wallet.Text = "$" + Convert.ToString(player.wallet); //display player funds
         }
-        
+
         /// <summary>
         /// BOT decision tree
         /// </summary>
@@ -440,7 +440,7 @@ namespace WindowsFormsApp1
         /// repaints buttons
         /// </summary>
         /// <param name="Painted"></param>
-        void ColourButtons(Color Painted)
+        private void ColourButtons(Color Painted)
         {
             QuitMainPanel.BackColor = Painted;
             PlayGam.BackColor = Painted;
@@ -468,7 +468,7 @@ namespace WindowsFormsApp1
         /// Repaints textbox
         /// </summary>
         /// <param name="Painted"></param>
-        void ColourTextBox(Color Painted)
+        private void ColourTextBox(Color Painted)
         {
             DeckCountBox.BackColor = Painted;
             PotBox.BackColor = Painted;
@@ -493,7 +493,7 @@ namespace WindowsFormsApp1
         /// recolours panels
         /// </summary>
         /// <param name="Painted"></param>
-        void ColourPanel(Color Painted)
+        private void ColourPanel(Color Painted)
         {
             MainPanel.BackColor = Painted;
             GamePanel.BackColor = Painted;
@@ -503,7 +503,7 @@ namespace WindowsFormsApp1
         /// <summary>
         /// Hides colour related textbox
         /// </summary>
-        void HideColour()
+        private void HideColour()
         {
             RedPreset.Visible = false;
             GreenPreset.Visible = false;
